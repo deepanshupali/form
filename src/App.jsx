@@ -13,12 +13,12 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        {/* public routes */}
+
         <Route path="/" element={<Login />} />
         <Route path="/home" element={<Home />} />
         <Route path="success" element={<Success />} />
       </Route>
-      {/* we want to protect these routes */}
+
       <Route element={<RequireAuth allowedRoles="employee" />}>
         <Route path="form" element={<RequestForm />} />
       </Route>
@@ -26,8 +26,8 @@ function App() {
       <Route element={<RequireAuth allowedRoles="admin" />}>
         <Route path="admin" element={<Admin />} />
 
-        {/* catch all */}
-        {/* <Route path="*" element={<Missing />} /> */}
+
+
       </Route>
     </Routes>
   );
